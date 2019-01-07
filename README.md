@@ -26,11 +26,11 @@ Do clone or DownloadZip the project and save it into new folder on your PC
 
 -open Vs code and choose the folder with the project
 
--Run the command 'npm install' in Terminal 
+-in Terminal Run the command 'npm install' 
 
--Run the command 'npm install -g @angular/cli' in Terminal
+-in Terminal Run the command 'npm install -g @angular/cli' 
 
--Run the command 'ng serve' in Terminal
+-in Terminal Run the command 'ng serve' 
 
 -open the browser on http://localhost:4200/
 
