@@ -1,0 +1,38 @@
+
+
+div{
+   
+   border-right: 5px solid aquamarine;
+ 
+}
+
+div ul li {
+    
+    cursor: pointer;
+    text-align: center;
+    
+    list-style: none;
+    font-family: tahoma;
+    font-size: 20px;
+    transition: 0.2s all;
+}
+div ul li:hover {
+    
+    
+    border-left: 10px solid aquamarine;
+  
+   
+}
+.col-md-2{
+    background-color: aquamarine;
+}
+div ul h3{
+    text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .navbar{
+       display: none;
+        
+    }
+  }

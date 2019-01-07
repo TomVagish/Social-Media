@@ -1,0 +1,66 @@
+h1 {
+
+    font-family: tahoma;
+    color: whitesmoke;
+}
+.card {
+
+    background-color: grey;
+    margin-top: 80px;
+    width: 30%;
+    margin-left: 80%;
+
+}
+button {
+    background-color: aquamarine;
+    color: black;
+}
+h3 {
+    text-align: center;
+    color: whitesmoke;
+}
+span {
+    color: mediumspringgreen;
+}
+
+nav ul li {
+    font-family: tahoma;
+    color: whitesmoke;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+a:hover {
+    transform: scale(1.2,1.1);
+}
+
+.container {
+    z-index: 1;
+    position: absolute;
+}
+@media only screen and (max-width: 767px) {
+
+    .card {
+        width: 100%;
+        margin-left: 1%;
+    }
+
+}
+@media only screen and (max-width: 992px) {
+
+    .card {
+        width: 80%;
+        margin-left: 1%;
+    }
+
+}
+@media only screen and (max-width: 360px) {
+
+    .card {
+        margin-top: 150px;
+    }
+
+}

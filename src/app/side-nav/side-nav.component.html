@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+  <!-- Menu in the left side of the website that shows the most common command for users -->
+      <ul class="col-md-10" >
+          <li>User Name Page</li>
+          <li>Home Page</li>
+          <li>Settings</li>
+          <li (click)="ShowHide=!ShowHide" >
+            <a class="dropdown-toggle" >Sort</a>
+            <ul *ngIf="ShowHide" >
+                <li>By Date</li>
+                <li>By Likes</li>
+              </ul>
+          </li>
+         
+        </ul>
+      
+  </div>
+
+</div>

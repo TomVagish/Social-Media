@@ -1,0 +1,21 @@
+
+
+
+img{
+    width: 50%;
+    border-radius: 50px;
+transition: 0.3s all;
+}
+img:hover{
+    cursor: pointer;
+transform: scale(1.1,1.2);
+}
+
+@media only screen and (max-width: 992px) {
+    img{
+        width: 10%;
+
+    }
+
+
+  }

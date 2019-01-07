@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h3>share things with your friend..</h3>
+          <div>
+              <textarea #NewPostContent  placeholder="Write here your post content!"  ></textarea>
+            
+              
+      
+          </div> 
+          
+        </div>
+        <div class="col-md-12">
+          <label class="btn btn-dark">
+            Image
+            <input type="file">
+          </label>
+      
+          <label class="btn btn-warning">Video</label>
+          <label (click)="DeletePostContent()" class="btn btn-danger">Delete post!</label>
+        </div>
+      
+      <div class="col-md-12">
+        <br>
+          <button   (click)="UploadNewPost()" class="btn btn-success">Upload Post!</button>
+      </div>
+        </div>
+</div>

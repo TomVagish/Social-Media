@@ -1,0 +1,39 @@
+{
+"Users": [
+	{
+	"FirstName" : "Tom",
+	"LastName" : "Vagish",
+	"ImgProfile" : "",
+	"UserEmail" : "tomvagish4@gmail.com",
+	"Numofpost" : 10,
+	},
+	{
+	"FirstName" : "Amir",
+	"LastName" : "Shtiasny",
+	"ImgProfile" : "",
+	"UserEmail" : "amirshtiasny4@gmail.com",
+	"Numofpost" : 9,
+	},
+	{
+	"FirstName" : "Avi",
+	"LastName" : "Mizrahi",
+	"ImgProfile" : "",
+	"UserEmail" : "avimizrahi@gmail.com",
+	"Numofpost" : 7,
+	}
+
+]
+ "Posts" :[
+	
+	{
+	"PostImg" : "",
+	"PostHeader" : "",	
+	"Postcontent" : "",
+	"Postlike" : 10,
+	"Postcomment" : "Commentarray[]",	
+	"Postuploaddate": " 20,12,2018",
+	},
+]
+
+}
+

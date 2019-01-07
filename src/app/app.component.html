@@ -1,0 +1,109 @@
+<div class="nav">
+        
+<app-nav></app-nav>
+
+
+</div>
+
+<div class="container-fluid">
+
+        <div class="row">
+                <div class="col-md-12">
+                                <div>
+                                        <hr>
+         <img (click)="toggle_Addpost_Navbar_Messenger(1)" class="menuImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/220px-Hamburger_icon.svg.png" >
+          <!-- <button (click)="toggle_Addpost_Navbar_Messenger(2)"  class="btn btn-primary">Add post</button> -->
+          <img  class="AddpostImg" (click)="toggle_Addpost_Navbar_Messenger(2)"  src="https://cdn3.iconfinder.com/data/icons/document-color/32/12-512.png" >
+              <img (click)="toggle_Addpost_Navbar_Messenger(3)" class="MessengerImg" src="https://cdn4.iconfinder.com/data/icons/apps-set-1/24/Comments-01-512.png">
+            </div>
+                </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-12">
+            
+               
+                <br>
+                <hr>
+            
+                
+                 <div class="col-md-12">
+                        <div *ngIf="ShowMenu"   >
+                               <app-side-nav></app-side-nav>
+       
+                         </div>              
+                        </div>
+
+                 <div class="col-md-12">
+                        <div class="MessengerToggel" *ngIf="showMessenger"   >
+                                <app-side-messenger></app-side-messenger>       
+                         </div>              
+                        </div>
+
+                   <div class="col-md-12">
+                 <div *ngIf="ShowAddPost"   >
+                 <app-addpost></app-addpost>
+                  </div>              
+                 </div>
+
+                
+
+          
+                
+                <app-post (PostArrayChange)="PostArrayChangefunc($event)"></app-post>
+                <br>
+                <br>
+                </div>
+        </div>
+     
+</div>
+
+<div  class="container" >
+
+ <div class="row">
+        <div class="col-md-3">
+             <div class="sideNavFixed">
+                        <br>
+                <app-side-nav></app-side-nav>
+             </div>
+        </div>
+        
+        <div class="col-md-7">
+                        
+           <div class="centerPost">
+                        <br>
+                <hr>
+                <button (click)="Show=!Show"  class="btn btn-primary">Add post</button>
+                   <div class="col-md-8">
+                 <div *ngIf="Show"   >
+                 <app-addpost></app-addpost>
+                  </div>
+                                      
+                 </div>
+                
+                <app-post (PostArrayChange)="PostArrayChangefunc($event)"></app-post>
+                <br>
+                <br>
+           </div>
+             
+        </div>
+
+      
+                <div class="col-md-2">
+                               <div class="SideMessengerfixed">
+                                        <app-side-messenger></app-side-messenger>
+                               </div>
+                        </div>
+      
+
+ </div>
+ 
+</div>
+
+
+<div class="BottomNav">
+                <p> <a href="https://www.facebook.com/tom.vagish1?ref=bookmarks" target="blank" >Powered By Tom</a></p>
+        </div>
+        
+
+

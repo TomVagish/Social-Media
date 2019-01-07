@@ -1,0 +1,50 @@
+.likebutton {
+    width: 10%;
+    padding-right: 10px;
+    transition: 0.3s all;
+}
+.UploadPostDate {
+    float: right;
+}
+.likebutton:hover {
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+
+.UserprofileImg {
+    width: 10%;
+    height: auto;
+}
+
+.commentUserImg {
+    width: 10%;
+    height: auto;
+}
+
+.card {
+    margin-top: 20px;
+}
+.card-header {
+
+    font-family: tahoma;
+    font-size: 20px;
+}
+
+.CommentButton {
+    width: 20%;
+    transition: 0.3s all;
+
+}
+
+.card-title {
+    float: left;
+}
+@media only screen and (max-width: 767px) {
+
+    .likebutton {
+
+        width: 20%;
+
+    }
+
+}

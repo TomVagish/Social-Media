@@ -1,0 +1,45 @@
+
+
+<div class="row">
+  
+  <div class="col-md-12">
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+          <h1><span>Be</span> Connected <span>|</span> </h1>
+          
+            <ul class="nav navbar-nav">
+            <a (click)="Toggle_Login_Register(1)">  <li><span>L</span>ogin</li></a>
+            <a (click)="Toggle_Login_Register(2)"> <li><span>R</span>egister</li></a>
+            </ul>
+          </nav>
+  </div>
+</div>
+
+<div *ngIf="OpenLogin"  class="container">
+    <div class="card" >
+      <h3><span>L</span>ogin</h3>
+      <form>
+        <input #login_username class="form-control" type="text" placeholder="User Name" required>
+        <input #login_email class="form-control" type="email" placeholder="Email" required>
+        
+      </form>
+         <hr>
+          <button  (click)="WellcomeUser()" type="submit" href="#" class="btn btn-success">Log-in</button>
+        </div>
+      </div>
+
+
+<div *ngIf="OpenRegister"  class="container">
+    <div class="card" >
+      <h3><span>R</span>egister</h3>
+      <form>
+        <input class="form-control" type="text" placeholder="First Name" required>
+        <input class="form-control" type="text" placeholder="Last Name" required>
+        <input class="form-control" type="text" placeholder="User Name" required>
+        <input class="form-control" type="number" placeholder="Phone" required>
+        <input class="form-control" type="email" placeholder="Email" required>
+      </form>
+         <hr>
+          <button (click)="WellcomeNewUser()" type="submit" href="#" class="btn btn-success">Register</button>
+        </div>
+      </div>
+
