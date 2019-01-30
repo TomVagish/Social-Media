@@ -1,8 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {postService} from './post-service.service';
+import { ServesService } from './server.service';
 
-@Component({selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.css'], providers: [postService]})
-export class AppComponent  {
+
+
+@Component({selector: 'app-root',
+ templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+   providers: [postService,ServesService]})
+
+export class AppComponent implements OnInit {
     title = 'SocialMediaProject';
 
     constructor() {}
@@ -12,6 +19,16 @@ export class AppComponent  {
     ShowAddPost = false;
     showMessenger = false;
 
+    
+    ngOnInit()
+    {
+       
+
+        
+    }
+
+    
+    
 
 
     //Toggle function with 3 options!

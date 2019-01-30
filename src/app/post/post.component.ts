@@ -1,18 +1,27 @@
 import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import {post} from '../post.model';
 import {postService} from '../post-service.service';
+import { ServesService } from '../server.service';
 
 
-@Component({selector: 'app-post', templateUrl: './post.component.html', styleUrls: ['./post.component.css'], providers: [postService]})
+
+
+@Component({selector: 'app-post',
+ templateUrl: './post.component.html',
+  styleUrls: ['./post.component.css'],
+   providers: [postService]})
+
 export class PostComponent implements OnInit {
 
     date = new Date();
-    PostArray : post[];
+     PostArray: post[] = [];
+    
 
-    constructor(private postservice : postService) {
+
+    constructor(private Serverservice:ServesService) {
         //The current date! not the current time the user upload the post!
         this.date = new Date();
-
+       
     }
 
     CommentArray : string[] = [];
@@ -23,14 +32,26 @@ export class PostComponent implements OnInit {
 
     ngOnInit() {
 
-        // first render of PostArray,take the array from service and inject it to
-        // PostArray here!
-        this.PostArray = this.postservice.getPost();
-
+       this.Serverservice.getserver().subscribe(
+           (response) => {
+               const data = response.json();
+               this.PostArray = data;
+           },
+           (error)=> console.log(error)
+       );
       
-
+        //this.PostArray = this.postservice.getPost();
     }
 
+
+    
+
+
+
+    
+
+    
+    
     // When the user write a comment he can press "Enter" to send it.
     OnClickSendComment(event) {
 
