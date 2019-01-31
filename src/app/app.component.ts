@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {postService} from './post-service.service';
 import { ServesService } from './server.service';
 
+import { Observable } from 'rxjs';
+
+
+
 
 
 @Component({selector: 'app-root',
@@ -12,7 +16,16 @@ import { ServesService } from './server.service';
 export class AppComponent implements OnInit {
     title = 'SocialMediaProject';
 
-    constructor() {}
+    
+
+    constructor() {
+       
+    
+    }
+
+    onsubmit() {
+        
+      }
 
     // vars that are responsible to Toggle Menu/AddPost/messenger - when the website is  fits to tablets.
     ShowMenu = false;

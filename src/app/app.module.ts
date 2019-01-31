@@ -8,7 +8,14 @@ import { NavComponent } from './nav/nav.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { PostComponent } from './post/post.component';
 import { AddpostComponent } from './post/addpost/addpost.component';
-import { SideMessengerComponent } from './side-messenger/side-messenger.component';
+import { SideMessengerComponent } from './side-messenger/side-messenger.component'
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { environment } from 'src/environments/environment';
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +26,11 @@ import { SideMessengerComponent } from './side-messenger/side-messenger.componen
     AddpostComponent,
     SideMessengerComponent,
   ],
-  imports: [BrowserModule,HttpModule],
+  imports: [AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    BrowserModule,
+    HttpModule,
+  ],
   providers: [postService,ServesService],
   bootstrap: [AppComponent]
 })

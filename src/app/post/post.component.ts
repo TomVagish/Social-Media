@@ -2,6 +2,8 @@ import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import {post} from '../post.model';
 import {postService} from '../post-service.service';
 import { ServesService } from '../server.service';
+import { AngularFireDatabase } from 'angularfire2/database';
+
 
 
 
@@ -14,11 +16,11 @@ import { ServesService } from '../server.service';
 export class PostComponent implements OnInit {
 
     date = new Date();
-     PostArray: post[] = [];
+     PostArray: any;
     
 
 
-    constructor(private Serverservice:ServesService) {
+    constructor(private Serverservice:ServesService,private db:AngularFireDatabase) {
         //The current date! not the current time the user upload the post!
         this.date = new Date();
        
@@ -32,26 +34,32 @@ export class PostComponent implements OnInit {
 
     ngOnInit() {
 
-       this.Serverservice.getserver().subscribe(
-           (response) => {
-               const data = response.json();
-               this.PostArray = data;
-           },
-           (error)=> console.log(error)
-       );
+    //    this.Serverservice.getPosts().subscribe(
+    //        (response) => {
+    //            const data = response.json();
+    //            this.PostArray = data;
+              
+    //        },
+    //        (error)=> console.log(error)
+    //    );
+
+    this.db.list('/Posts')
+    .valueChanges()
+    .subscribe(
+        (response) =>{
+            this.PostArray = response;
+        }
+        
+        // console.log(res)//should give you the array of percentage. 
+    )
+
+      // console.log(this.Serverservice.getPost());
+
       
         //this.PostArray = this.postservice.getPost();
     }
 
 
-    
-
-
-
-    
-
-    
-    
     // When the user write a comment he can press "Enter" to send it.
     OnClickSendComment(event) {
 
