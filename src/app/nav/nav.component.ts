@@ -1,22 +1,28 @@
 import {Component, HostListener, ElementRef, ViewChild} from '@angular/core';
+import {AngularFireModule} from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from 'firebase';
+
 
 @Component({selector: 'app-nav', templateUrl: './nav.component.html', styleUrls: ['./nav.component.css']})
 export class NavComponent {
 
-    constructor(private eRef : ElementRef) {}
+    constructor(private eRef : ElementRef,private firebase:AngularFireDatabase) {}
+    
 
     // var for show/hide login/register div(card)
     OpenLogin = false;
     OpenRegister = false;
 
     // var for login
-    public login_username : string;
-    public login_email : string;
+    public registerEmailAuth : string;
+    public registerPasswordAuth : string;
 
     wellcomeUser = true;
-    @ViewChild('login_username')NewUserName : ElementRef;
-    @ViewChild('login_email')NewEmail : ElementRef;
+    @ViewChild('#register-password')NewUserName : ElementRef;
+    @ViewChild('#register-email')NewEmail : ElementRef;
 
+    
     // var for register click on anything outside the card login/register will close
     // the card
     @HostListener('document:click', ['$event'])
@@ -34,7 +40,6 @@ export class NavComponent {
     Toggle_Login_Register(flag : number)
     {
         if (flag == 1) {
-
             this.OpenLogin = !this.OpenLogin;
             this.OpenRegister = false;
         } else if (flag == 2) {
@@ -48,9 +53,11 @@ export class NavComponent {
         alert()
         this.OpenRegister = false;
     }
+
     WellcomeUser() {
         this.OpenLogin = false;
-        alert(this.NewUserName.nativeElement.value)
-
+        firebase.auth().createUserWithEmailAndPassword("tomvagish4@gmail.com","12348759")
+        .catch(error => console.log(error));
+ 
     }
 }

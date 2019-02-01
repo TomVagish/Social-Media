@@ -12,6 +12,7 @@
             <a (click)="Toggle_Login_Register(2)"> <li><span>R</span>egister</li></a>
             </ul>
           </nav>
+          
   </div>
 </div>
 
@@ -19,8 +20,9 @@
     <div class="card" >
       <h3><span>L</span>ogin</h3>
       <form>
-        <input #login_username class="form-control" type="text" placeholder="User Name" required>
-        <input #login_email class="form-control" type="email" placeholder="Email" required>
+         <input  class="form-control" type="email" placeholder="Email" required>
+        <input  class="form-control" type="password" placeholder="Password" required>
+        
         
       </form>
          <hr>
@@ -33,14 +35,49 @@
     <div class="card" >
       <h3><span>R</span>egister</h3>
       <form>
-        <input class="form-control" type="text" placeholder="First Name" required>
+        <!-- <input class="form-control" type="text" placeholder="First Name" required>
         <input class="form-control" type="text" placeholder="Last Name" required>
         <input class="form-control" type="text" placeholder="User Name" required>
-        <input class="form-control" type="number" placeholder="Phone" required>
-        <input class="form-control" type="email" placeholder="Email" required>
+        <input class="form-control" type="number" placeholder="Phone" required> -->
+        <input #register_email class="form-control" type="email" placeholder="Email" required>
+        <input #register_password class="form-control" type="password" placeholder="Password" required>
       </form>
          <hr>
           <button (click)="WellcomeNewUser()" type="submit" href="#" class="btn btn-success">Register</button>
         </div>
       </div>
 
+
+
+
+      <!-- The Modal -->
+      <div class="modal fade" id="demo-modal">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h2 class="modal-title">Edit User</h2>
+                      <button data-dismiss="modal" class="btn btn-danger" type="button">
+                          <span>&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <input
+                          type="text"
+                          id="name_input"
+                          class="form-control"
+                          placeholder="Enter name"
+                          required>
+                      <br>
+                      <input
+                          type="email"
+                          id="email_input"
+                          class="form-control"
+                          placeholder="Enter email"
+                          required>
+                      <hr>
+                      <button id="btnsaveChanges" type="submit" class="btn btn-success">Confirm</button>
+                  </div>
+              </div>
+          </div>
+      </div>

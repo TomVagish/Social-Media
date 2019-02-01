@@ -9,10 +9,10 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { PostComponent } from './post/post.component';
 import { AddpostComponent } from './post/addpost/addpost.component';
 import { SideMessengerComponent } from './side-messenger/side-messenger.component'
-
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { environment } from 'src/environments/environment';
+
 
 
 
