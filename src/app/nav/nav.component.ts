@@ -15,12 +15,12 @@ export class NavComponent {
     OpenRegister = false;
 
     // var for login
-    public registerEmailAuth : string;
-    public registerPasswordAuth : string;
+   private register_email:string;
+   private register_password:string;
 
     wellcomeUser = true;
-    @ViewChild('#register-password')NewUserName : ElementRef;
-    @ViewChild('#register-email')NewEmail : ElementRef;
+    @ViewChild('#register-password')registerPassword : ElementRef;
+    @ViewChild('#register-email')registerEmail : ElementRef;
 
     
     // var for register click on anything outside the card login/register will close
@@ -49,15 +49,16 @@ export class NavComponent {
 
     }
 
-    WellcomeNewUser() {
-        alert()
-        this.OpenRegister = false;
+    registerUser() {
+        firebase.auth().createUserWithEmailAndPassword(this.register_email,this.register_password)
+        .catch(error => console.log(error));
+      
+        //this.OpenRegister = false;
     }
 
-    WellcomeUser() {
+    loginUser() {
         this.OpenLogin = false;
-        firebase.auth().createUserWithEmailAndPassword("tomvagish4@gmail.com","12348759")
-        .catch(error => console.log(error));
+       
  
     }
 }

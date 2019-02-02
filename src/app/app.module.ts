@@ -12,7 +12,17 @@ import { SideMessengerComponent } from './side-messenger/side-messenger.componen
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { environment } from 'src/environments/environment';
+import {FormsModule} from '@angular/forms';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { Routes,RouterModule} from '@angular/router';
+import { HomepageComponent } from './homepage/homepage.component'
 
+  
+const appRoutes: Routes =[
+{ path: '', component: HomepageComponent },
+{ path: 'profilePage', component: ProfilePageComponent }
+
+];
 
 
 
@@ -25,11 +35,15 @@ import { environment } from 'src/environments/environment';
     PostComponent,
     AddpostComponent,
     SideMessengerComponent,
+    ProfilePageComponent,
+    HomepageComponent,
   ],
   imports: [AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     BrowserModule,
     HttpModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [postService,ServesService],
   bootstrap: [AppComponent]

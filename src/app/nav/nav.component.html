@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div *ngIf="OpenLogin"  class="container">
+<!-- <div *ngIf="OpenLogin"  class="container">
     <div class="card" >
       <h3><span>L</span>ogin</h3>
       <form>
@@ -26,24 +26,26 @@
         
       </form>
          <hr>
-          <button  (click)="WellcomeUser()" type="submit" href="#" class="btn btn-success">Log-in</button>
+          <button  (click)="loginUser()" type="submit" href="#" class="btn btn-success">Log-in</button>
         </div>
-      </div>
+      </div> -->
 
 
 <div *ngIf="OpenRegister"  class="container">
     <div class="card" >
       <h3><span>R</span>egister</h3>
-      <form>
+      <form onsubmit="registerUser()" id="register-form">
         <!-- <input class="form-control" type="text" placeholder="First Name" required>
         <input class="form-control" type="text" placeholder="Last Name" required>
         <input class="form-control" type="text" placeholder="User Name" required>
         <input class="form-control" type="number" placeholder="Phone" required> -->
-        <input #register_email class="form-control" type="email" placeholder="Email" required>
-        <input #register_password class="form-control" type="password" placeholder="Password" required>
+        <input [(ngModel)]="register_email" name="email" class="form-control" type="email" placeholder="Email" required>
+        <input [(ngModel)]="register_password" name="password" class="form-control" type="password" minlength="6" placeholder="Password" required>
+        <button (click)="registerUser()"  type="submit" form="register-form"  class="btn btn-success">Register</button>
+
       </form>
+
          <hr>
-          <button (click)="WellcomeNewUser()" type="submit" href="#" class="btn btn-success">Register</button>
         </div>
       </div>
 
