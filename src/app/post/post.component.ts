@@ -34,14 +34,6 @@ export class PostComponent implements OnInit {
 
     ngOnInit() {
 
-    //    this.Serverservice.getPosts().subscribe(
-    //        (response) => {
-    //            const data = response.json();
-    //            this.PostArray = data;
-              
-    //        },
-    //        (error)=> console.log(error)
-    //    );
 
     this.db.list('/Posts')
     .valueChanges()
@@ -50,13 +42,10 @@ export class PostComponent implements OnInit {
             this.PostArray = response;
         }
         
-        // console.log(res)//should give you the array of percentage. 
     )
 
-      // console.log(this.Serverservice.getPost());
 
       
-        //this.PostArray = this.postservice.getPost();
     }
 
 

@@ -16,6 +16,9 @@ text-align: center;
     margin-left: 80%;
 
 }
+ul li{
+    display: block;
+}
 button {
     background-color: aquamarine;
     color: black;

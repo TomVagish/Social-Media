@@ -1,4 +1,4 @@
-import {Component, ViewChild, ElementRef, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {postService} from 'src/app/post-service.service';
 import {post} from 'src/app/post.model';
 
@@ -8,17 +8,11 @@ import {post} from 'src/app/post.model';
 export class AddpostComponent {
 
     public NewPostContent : string;
-
-    PostArray : post[];
-    @Output()PostArrayChange = new EventEmitter < post > ();
-
     AddNewPost : post;
-    NewContentPost : string;
 
     constructor() {}
 
     // take control on content that user input for new Post!
-    @ViewChild('NewPostContent')NewPostContentRef : ElementRef;
 
     UploadNewPost() {
         // this.NewContentPost = this.NewPostContentRef.nativeElement.value;
@@ -39,7 +33,8 @@ export class AddpostComponent {
 
     //delete the Textarea in add post and clean it!
     DeletePostContent() {
-        this.NewPostContentRef.nativeElement.value = null;
+
+        
     }
 
 }

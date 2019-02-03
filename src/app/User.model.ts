@@ -7,13 +7,15 @@ export class User{
     private ImgProfilehor:string;
     private UserEmail:string;
     private Numofpost:number;
+    private Uid:string;
 
-    constructor(FirstName:string,LastName:string,ImgProfilehor:string,UserEmail:string,Numofpost:number){
+    constructor(FirstName:string,LastName:string,ImgProfilehor:string,UserEmail:string,Numofpost:number,Uid:string){
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.ImgProfilehor = ImgProfilehor;
         this.UserEmail = UserEmail;
         this.Numofpost = Numofpost;
+        this.Uid = Uid;
     }
 
 }

@@ -16,6 +16,8 @@ import {FormsModule} from '@angular/forms';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { Routes,RouterModule} from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component'
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 
   
 const appRoutes: Routes =[
@@ -43,6 +45,7 @@ const appRoutes: Routes =[
     BrowserModule,
     HttpModule,
     FormsModule,
+    AngularFireAuthModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [postService,ServesService],
