@@ -3,6 +3,9 @@ h1 {
     font-family: tahoma;
     color: whitesmoke;
 }
+h1:hover{
+    cursor: pointer;
+}
 nav input{
 border-radius: 10px;
 text-align: center;

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { User } from '../User.model';
 import { ServesService } from '../server.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 
@@ -13,8 +14,14 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({selector: 'app-nav', templateUrl: './nav.component.html', styleUrls: ['./nav.component.css']})
 export class NavComponent {
-
-    constructor(private afAuth: AngularFireAuth,private ServerService:ServesService,private eRef : ElementRef,private firebase:AngularFireDatabase, private router: Router) {}
+    userId: string;
+    constructor(private afAuth: AngularFireAuthModule,
+        private ServerService:ServesService,
+        private eRef : ElementRef,
+        private firebase:AngularFireDatabase,
+         private router: Router) {
+     
+    }
     
 
     // var for show/hide login/register div(card)
@@ -60,43 +67,50 @@ export class NavComponent {
 
     }
 
+
      // Create user by Email & password
     registerUser() {
-        
-        firebase.auth().createUserWithEmailAndPassword(this.register_email,this.register_password)
-        .catch(error => console.log(error));
+
+        //close Register card
         this.OpenRegister = false;
 
-        this.afAuth.authState.subscribe(res => {
-            if (res && res.uid) {
-              this.uid = res.uid;
-            } else {
-              console.log('user not logged in');
-            }
-          });
         
-         this.newUser  = new User("tom",
-         "vagish",
-         "http://www.mizrach.org.il/wp-content/uploads/2009/03/boy-512.png",
-         this.register_email,
-         10,
-         this.uid);
+        // send email & password to firebase auth!
+        firebase.auth().createUserWithEmailAndPassword(this.register_email,this.register_password)
+        .then(response =>{
+              // Create a new user
+            this.newUser  = new User("tom",
+            "vagish",
+            "http://www.mizrach.org.il/wp-content/uploads/2009/03/boy-512.png",
+            this.register_email,
+            10,
+            response.user.uid);
 
-         console.log(this.newUser);
+        // Post the user into 'Users' in Firebase/database
+         this.ServerService.setNewUser(this.newUser,response.user.uid).subscribe
+            (
+                (response) => console.log(response),
+                (error) => console.log(error)
+            );
+                
+        })
+        .catch(error => console.log(error));
 
-        this.ServerService.setNewUser(this.newUser).subscribe
-        (
-            (response) => console.log(response),
-            (error) => console.log(error)
-        );
-       
     }
+
+
+
+   
+
 
     loginUser() {
         this.OpenLogin = false;
-        firebase.auth().signInWithEmailAndPassword(this.login_email,this.login_password)
-        .catch(error => console.log(error));
-        this.checkauth();
+
+        firebase.auth().signInWithEmailAndPassword(this.login_email, this.login_password)
+        .catch(function(error) {
+         });
+
+    
     }
 
 
@@ -110,9 +124,9 @@ export class NavComponent {
     }
 
 
-    checkauth(){
+     checkauth(){
       
-       firebase.auth().onAuthStateChanged(function(user) {
+     firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log(user.uid + " in nav");
                 

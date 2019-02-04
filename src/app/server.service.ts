@@ -13,8 +13,9 @@ constructor(private http:Http,private db: AngularFireDatabase){
 
 }
 
-setNewUser(user:User){
-   return this.http.post('https://social-media-39aaa.firebaseio.com/Users.json',user);
+setNewUser(user:User,Uid:string){
+   
+   return this.http.post(`https://social-media-39aaa.firebaseio.com/Users/${Uid}.json`,user);
 }
 
 
