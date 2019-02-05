@@ -37,12 +37,14 @@ span {
 nav ul li {
     font-family: tahoma;
     color: whitesmoke;
+    
 }
 
 a {
     cursor: pointer;
     text-decoration: none;
     transition: 0.3s all;
+    color: whitesmoke
 }
 a:hover {
     transform: scale(1.2,1.1);

@@ -1,18 +1,25 @@
 
 
-  
-
       <nav class="navbar navbar-dark bg-dark fixed-top">
            
-          <h1 routerLink="/"><span>Be</span> Connected <span>|</span> </h1>
+          <h1><span>Be</span> Connected <span>|</span> </h1>
              
             <ul class="nav justify-content-end">
+
+                
+            <ng-template [ngIf]="true">
             <li><input class="form-control" type="search" placeholder="Search"></li>
-            <li><a (click)="signout()">signout</a></li>
+              <li><a (click)="signout()">signout</a></li>
+            </ng-template>
             <ul >
-            <li><a (click)="Toggle_Login_Register(1)">  <span>L</span>ogin</a></li>
-            <li><a (click)="Toggle_Login_Register(2)"> <span>R</span>egister</a></li>
-            
+
+                <ng-template [ngIf]="true">
+                        <li><a routerLink="/LoginPage">  <span>L</span>ogin</a></li>
+                        <li><a routerLink="/RegisterPage"> <span>R</span>egister</a></li>        
+               
+                </ng-template>
+         
+          
             </ul>
             </ul>
 
@@ -20,10 +27,10 @@
           </nav>
   
 
-
+<!-- 
 <div *ngIf="OpenLogin"  class="container">
     <div class="card" >
-      <h3><span>L</span>ogin</h3>
+      <h3 ><span>L</span>ogin</h3>
       <form>
          <input [(ngModel)]="login_email" name="loginemail"  class="form-control" type="email" placeholder="Email" required>
         <input [(ngModel)]="login_password" name="loginpassword"  class="form-control" type="password" placeholder="Password" required>
@@ -38,10 +45,7 @@
     <div class="card" >
       <h3><span>R</span>egister</h3>
       <form onsubmit="registerUser()" id="register-form">
-        <!-- <input class="form-control" type="text" placeholder="First Name" required>
-        <input class="form-control" type="text" placeholder="Last Name" required>
-        <input class="form-control" type="text" placeholder="User Name" required>
-        <input class="form-control" type="number" placeholder="Phone" required> -->
+    
         <input [(ngModel)]="register_email" name="email" class="form-control" type="email" placeholder="Email" required>
         <input [(ngModel)]="register_password" name="password" class="form-control" type="password" minlength="6" placeholder="Password" required>
         <button (click)="registerUser()"  type="submit" form="register-form"  class="btn btn-success">Register</button>
@@ -52,11 +56,13 @@
         </div>
       </div>
 
+ -->
 
+  
 
 
       <!-- The Modal -->
-      <div class="modal fade" id="demo-modal">
+      <!-- <div class="modal fade" id="demo-modal">
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
@@ -85,4 +91,4 @@
                   </div>
               </div>
           </div>
-      </div>
+      </div> -->

@@ -14,9 +14,9 @@ export class SideMessengerComponent implements OnInit {
     ngOnInit() {
         // show the all users UserName in Array, and show them in side messenger.
         // the final result is to show only the Online Users.
-        this.OnlineArray = this.postservice.getPost();
+        //this.OnlineArray = this.postservice.getPost();
 
-        this.db.list('/Users')
+        this.db.list('/Users/')
         .valueChanges()
         .subscribe(
             (response) =>{

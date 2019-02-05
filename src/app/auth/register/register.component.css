@@ -1,0 +1,22 @@
+form{
+    margin-top: 100px;    
+}
+
+span{
+    color: aquamarine;
+
+}
+
+h1{
+    text-align: center;
+    color: silver;
+    font-size: 150px;
+    margin-top: 150px;
+    transition: 1s all;
+}
+
+h1:hover{
+    color: grey;
+   
+}
+
