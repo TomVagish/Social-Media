@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
         const password = form.value.password;
         const firstname = form.value.Firstname;
         const lastname = form.value.Lastname;
+        // built-in img for now!
         const userimg = form.value.userimg;
 
         // send email & password to firebase auth!

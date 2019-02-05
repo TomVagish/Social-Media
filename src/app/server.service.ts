@@ -4,6 +4,7 @@ import {AngularFireDatabase} from 'angularfire2/database'
 import {User} from './User.model';
 import * as firebase from 'firebase';
 import {defineBase} from '@angular/core/src/render3';
+import { post } from './post.model';
 
 @Injectable()
 
@@ -17,7 +18,12 @@ export class ServesService {
             .patch(`https://social-media-39aaa.firebaseio.com/Users/${Uid}/.json`, user);
     }
 
-    // Get the post from Firebase/Database getAllPosts(){ return
-    // this.http.get('https://social-media-39aaa.firebaseio.com/Posts'); }
 
+    //post new post into Firebase/database
+    setNewPost(Post:post){
+        return this
+            .http
+            .post(`https://social-media-39aaa.firebaseio.com/Posts/.json`, Post);
+    }
+ 
 }

@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {post} from 'src/app/post.model';
+import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from 'firebase';
+import { ServesService } from 'src/app/server.service';
 
 @Component({selector: 'app-addpost', templateUrl: './addpost.component.html', styleUrls: ['./addpost.component.css'], providers: []})
 export class AddpostComponent {
@@ -7,22 +10,41 @@ export class AddpostComponent {
     public NewPostContent : string;
     AddNewPost : post;
 
-    constructor() {}
+    constructor(private db:AngularFireDatabase,private ServerService:ServesService) {}
 
     // take control on content that user input for new Post!
 
     UploadNewPost() {
-        // this.NewContentPost = this.NewPostContentRef.nativeElement.value; Trying to
-        // upload post and send it to serviePost and push it into PostArray  *** not
-        // working yet! ***   this.AddNewPost = new post("tom", "vagish", "hhh", "22",
-        // this.NewContentPost, 5, "1");  this.PostArray.push(this.AddNewPost);
-        // this.PostArrayChange.emit(this.AddNewPost); check
-        // console.log(this.PostArrayChange) console.log(this.PostArray)
-        // console.log(this.AddNewPost) this.NewPostContentRef.nativeElement.value=null;
+
+       
+
+        let CurrentUid = localStorage.getItem('CurrentUserUid');
+
+    this.db.list(`/Users/${CurrentUid}`).valueChanges().subscribe(item =>{
+        
+        
+        //the Current user name
+        let name = item[0] +" "+ item[2];
+        let img = item[1]+"";
+        //built-in img for now!
+         this.AddNewPost = new post(CurrentUid,name,img,'https://www.israel21c.org/wp-content/uploads/2016/06/shutterstock_105989930-1000x657.jpg' ,this.NewPostContent,5); 
+         this.ServerService.setNewPost(this.AddNewPost)
+         .subscribe(
+             (response) => console.log(name)
+             , (error) => console.log(error));
+    })
+    this.NewPostContent = null
+
+     
+         
+        
+        
 
     }
 
     //delete the Textarea in add post and clean it!
-    DeletePostContent() {}
+    DeletePostContent() {
+        this.NewPostContent = null
+    }
 
 }
