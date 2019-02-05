@@ -1,16 +1,79 @@
-.container{
-  
+.container {
+
     margin-top: 75px;
-     background-color: rgba(221, 215, 215, 0.418);
- }
+    background-color: rgba(221, 215, 215, 0.418);
+}
 
- #profile-img{
-     border-radius: 50%;
-     padding: 1%;
- }
- h1{
-     margin: 10% 0 0 1%; 
- }
+#profile-img {
+    border-radius: 50%;
+    padding: 1%;
+}
+h1 {
+    margin: 10% 0 0 1%;
+}
 
+textarea {
+    width: 100%;
+    height: auto;
 
+}
 
+label {
+    margin-right: 5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.likebutton {
+    width: 10%;
+    padding-right: 10px;
+    transition: 0.3s all;
+}
+.UploadPostDate {
+    float: right;
+}
+.likebutton:hover {
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+
+.UserprofileImg {
+    width: 10%;
+    height: auto;
+    border-radius: 20%;
+}
+
+.commentUserImg {
+    width: 10%;
+    height: auto;
+}
+
+.card {
+    margin-top: 20px;
+}
+.card-header {
+
+    font-family: tahoma;
+    font-size: 20px;
+}
+
+.CommentButton {
+    width: 20%;
+    transition: 0.3s all;
+
+}
+
+.card-title {
+    float: left;
+}
+@media only screen and (max-width: 767px) {
+
+    .likebutton {
+
+        width: 20%;
+
+    }
+
+}

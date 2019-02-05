@@ -1,33 +1,40 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
 
+    <h1 routerLink="/homePage">
+        <span>Be</span>
+        Connected
+        <span>|</span>
+    </h1>
 
-      <nav class="navbar navbar-dark bg-dark fixed-top">
-           
-          <h1><span>Be</span> Connected <span>|</span> </h1>
-             
-            <ul class="nav justify-content-end">
+    <ul class="nav justify-content-end">
 
-                
-            <ng-template [ngIf]="true">
-            <li><input class="form-control" type="search" placeholder="Search"></li>
-              <li><a (click)="signout()">signout</a></li>
+        <ng-template [ngIf]="true">
+            <li>
+                <input class="form-control" type="search" placeholder="Search"></li>
+                <li>
+                    <a (click)="signout()">signout</a>
+                </li>
             </ng-template>
             <ul >
 
                 <ng-template [ngIf]="true">
-                        <li><a routerLink="/LoginPage">  <span>L</span>ogin</a></li>
-                        <li><a routerLink="/RegisterPage"> <span>R</span>egister</a></li>        
-               
+                    <li>
+                        <a routerLink="/LoginPage">
+                            <span>L</span>ogin</a>
+                    </li>
+                    <li>
+                        <a routerLink="/RegisterPage">
+                            <span>R</span>egister</a>
+                    </li>
+
                 </ng-template>
-         
-          
-            </ul>
-            </ul>
 
-            
-          </nav>
-  
+            </ul>
+        </ul>
 
-<!-- 
+    </nav>
+
+    <!-- 
 <div *ngIf="OpenLogin"  class="container">
     <div class="card" >
       <h3 ><span>L</span>ogin</h3>
@@ -58,11 +65,8 @@
 
  -->
 
-  
-
-
-      <!-- The Modal -->
-      <!-- <div class="modal fade" id="demo-modal">
+    <!-- The Modal -->
+    <!-- <div class="modal fade" id="demo-modal">
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">

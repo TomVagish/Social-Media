@@ -1,35 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 import * as firebase from 'firebase';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
+@Component({selector: 'app-login', templateUrl: './login.component.html', styleUrls: ['./login.component.css']})
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+    constructor(private router : Router) {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {}
 
+    onLogin(form : NgForm) {
+        const email = form.value.email;
+        const password = form.value.password;
 
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(email, password)
+            .then(response => {
+                localStorage.setItem('CurrentUserUid', response.user.uid);
+                this
+                    .router
+                    .navigate(['/homePage']);
+            })
+            .catch(function (error) {});
 
-  onLogin(form:NgForm){
-    const email = form.value.email;
-    const password = form.value.password;
-
-    firebase.auth().signInWithEmailAndPassword(email,password)
-    .then(
-     response =>{
-        this.router.navigate(['/homePage']);
-     }
-    )
-    .catch(function(error) {
-     });
-
-  }
+    }
 }
