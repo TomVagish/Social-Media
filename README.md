@@ -2,26 +2,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
-## Development server
+ 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+The project running in this address:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ http://beconnectedd.000webhostapp.com/
 
-## Build
+ ** For now the project is FrontEnd level **
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The application build for connection between friends and share information and opinions/articles.
+everyone can register to website and start upload 'post'.
+in addition every user can open text message with other online useres,press 'LIKE' to favorite post and comment on then.
+the application allowed simple navigation when the application fit to tablets/smartphones.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The app build in Vs code with NODE.JS PACKAGE & ANGULAR CLI
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Running:
 
-## Further help
+Do clone or DownloadZip the project and save it into new folder on your PC
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-open Vs code and choose the folder with the project
+
+-in Terminal Run the command 'npm install' 
+
+-in Terminal Run the command 'npm install -g @angular/cli' 
+
+-in Terminal Run the command 'ng serve' 
+
+-open the browser on http://localhost:4200/
+
+
+
+
