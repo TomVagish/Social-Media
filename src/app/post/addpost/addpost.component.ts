@@ -30,10 +30,9 @@ export class AddpostComponent {
          this.AddNewPost = new post(CurrentUid,name,img,'https://www.israel21c.org/wp-content/uploads/2016/06/shutterstock_105989930-1000x657.jpg' ,this.NewPostContent,5); 
          this.ServerService.setNewPost(this.AddNewPost)
          .subscribe(
-             (response) => console.log(name)
-             , (error) => console.log(error));
+             (error) => console.log(error));
     })
-    this.NewPostContent = null
+    
 
      
          

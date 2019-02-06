@@ -20,6 +20,11 @@ h1:hover {
 }
 
 img {
-    width: 110%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
+}
+
+h5{
+    color: red;
+    
 }

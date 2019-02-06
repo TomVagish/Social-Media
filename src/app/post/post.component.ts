@@ -3,7 +3,10 @@ import {post} from '../post.model';
 import {ServesService} from '../server.service';
 import {AngularFireDatabase} from 'angularfire2/database';
 
-@Component({selector: 'app-post', templateUrl: './post.component.html', styleUrls: ['./post.component.css'], providers: []})
+@Component({selector: 'app-post',
+ templateUrl: './post.component.html',
+  styleUrls: ['./post.component.css'],
+   providers: []})
 
 export class PostComponent implements OnInit {
 
