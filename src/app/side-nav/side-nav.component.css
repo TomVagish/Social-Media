@@ -2,14 +2,29 @@
 div {
 
     border-right: 5px solid aquamarine;
-
+  
 }
+
+.row{
+    position: fixed;
+    width: 18%;
+   
+}
+
+#userName{
+    font-size: 25px;
+    transition: 0.3s all;
+}
+#userName:hover{
+    color: aquamarine;
+}
+
+
 
 div ul li {
 
     cursor: pointer;
     text-align: center;
-
     list-style: none;
     font-family: tahoma;
     font-size: 20px;
@@ -17,13 +32,15 @@ div ul li {
 }
 div ul li:hover {
     border-left: 10px solid aquamarine;
-
+    transform:scale(1.1,1.1);
 }
 
 ul li a {
     color: black;
     text-decoration: none;
+    transition: 0.3s all;
 }
+
 
 .col-md-2 {
     background-color: aquamarine;

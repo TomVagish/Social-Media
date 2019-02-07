@@ -49,4 +49,9 @@ export class PostComponent implements OnInit {
 
     }
 
+    handleClick(e:MouseEvent, i: any){
+        alert(e);
+        alert(i);
+    }
+
 }

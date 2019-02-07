@@ -57,29 +57,8 @@ export class ProfilePageComponent implements OnInit {
         this.filterExact('Uid',CurrentUid);
       })
 
-      const y = this.db.list('/Posts', ref => ref.orderByChild('Uid').equalTo(CurrentUid));
-        console.log(y);
+   
       
-        // const databaseRef = firebase.database().ref().child('Users');
-        // const queriedDbRef = this.db.list('/Users');
-        // const x = queriedDbRef
-        // .where({
-        //   name: 'David',
-        //   age: 27
-        // });
-        
-
-
-        // all post in profile page - not done,requierd sort/filter
-        // this
-        //     .db
-        //     .list(`/Posts`)
-        //     .valueChanges()
-        //     .subscribe((response) => {
-        //         console.log(response);
-        //         this.userPostArray = response;
-
-        //     })
     }
    
     
