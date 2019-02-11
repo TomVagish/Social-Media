@@ -1,7 +1,7 @@
 
 
-export class post {
-    
+export class Post {
+
     private Uid : string;
     private postUserNameImg : string;
     private postUserName :string;
@@ -17,7 +17,7 @@ export class post {
         this.postUserName = postUserName;
         this.postUserNameImg = postUserNameImg;
         this.postImg = postImg;
-        
+
      //   this.postHeader = postHeader;
         this.postContent = postContent;
         this.postLike = postLike;

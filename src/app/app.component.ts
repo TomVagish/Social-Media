@@ -17,22 +17,36 @@ export class AppComponent implements OnInit {
     OpenRegister = false;
 
     // var for login
-    private register_email : string;
-    private register_password : string;
+    private register_email: string;
+    private register_password: string;
 
-    constructor() {}
+    constructor(private Ss: ServesService) {}
 
-    ngOnInit()
-    {
+    ngOnInit() {
+
+
+      this.Ss.getusers().subscribe(
+        (response) => {
+          console.log(response);
+        }
+      );
+
+
+
+
+
+
+
+
 
         firebase
             .auth()
             .onAuthStateChanged(function (user) {
                 if (user) {
-                    console.log(user.uid + " auth change in app");
+                    console.log(user.uid + 'auth change in app');
                     // User is signed in.
                 } else {
-                    console.log("null in nav");
+                    console.log('null in nav');
                     // No user is signed in.
                 }
             });
