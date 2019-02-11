@@ -11,6 +11,14 @@ import { Post } from './post.model';
 export class ServesService {
     constructor(private http: Http, private db: AngularFireDatabase) {}
 
+
+
+    sendUsertoserver(user: any) {
+      return this.http.post('http://localhost:3000/users', user);
+    }
+
+
+
     // post new User into Firebase/Users
     setNewUser(user: User, Uid: string) {
         return this
@@ -19,16 +27,15 @@ export class ServesService {
     }
 
 
-    getusers() {
-      return this.http.get('https://randomuser.me/api/');
-    }
+
+
 
 
     // post new post into Firebase/database
     setNewPost(Poost: Post) {
         return this
             .http
-            .post(`https://social-media-39aaa.firebaseio.com/Posts/.json`, Poost);
+            .post(`http://localhost:3000/posts`, Poost);
     }
 
 }

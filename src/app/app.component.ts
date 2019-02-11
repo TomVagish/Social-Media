@@ -25,12 +25,6 @@ export class AppComponent implements OnInit {
     ngOnInit() {
 
 
-      this.Ss.getusers().subscribe(
-        (response) => {
-          console.log(response);
-        }
-      );
-
 
 
 
