@@ -19,7 +19,12 @@ export class AddpostComponent {
 
     UploadNewPost() {
 
-      this.AddNewPost = new Post('Header!', this.NewPostContent);
+      // take the current time that the post upload!
+      const cDate = new Date();
+      const CurrentDate = cDate.getDate() + '/' + (cDate.getMonth() + 1) + '/' + cDate.getFullYear();
+
+      // Create an Object of 'Post' and sending him to 'setNewPost'  function into 'ServerService' !
+      this.AddNewPost = new Post(this.NewPostContent, 'Header!', CurrentDate);
       this.ServerService.setNewPost(this.AddNewPost)
       .subscribe(
           (error) => console.log(error));

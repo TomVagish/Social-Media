@@ -5,46 +5,61 @@ import {User} from 'src/app/User.model';
 import {ServesService} from 'src/app/server.service';
 import {Router} from '@angular/router';
 
-@Component({selector: 'app-register', templateUrl: './register.component.html', styleUrls: ['./register.component.css']})
+@Component({selector: 'app-register',
+ templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']})
 export class RegisterComponent implements OnInit {
 
-    //Vars
-    private newUser : User;
+    // Vars
+    private newUser: User;
 
-    constructor(private router : Router, private ServerService : ServesService) {}
+    constructor(private router: Router, private ServerService: ServesService) {}
 
     ngOnInit() {}
 
-    onRegisterd(form : NgForm) {
-        const email = form.value.email;
+
+
+
+    onRegisterd(form: NgForm) {
+
+      const email = form.value.email;
         const password = form.value.password;
-        const firstname = form.value.Firstname;
-        const lastname = form.value.Lastname;
-        // built-in img for now!
-        const userimg = form.value.userimg;
 
-        // send email & password to firebase auth!
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then(response => {
-                // Create a new user
-                this.newUser = new User(firstname, lastname, 'http://www.mizrach.org.il/wp-content/uploads/2009/03/boy-512.png', email, 10, response.user.uid);
-                localStorage.setItem('CurrentUserUid', response.user.uid);
+          const user = {
+            userEmail: email,
+            userPassword: password
+          };
 
-                // Post the user into 'Users' in Firebase/database
-                this
-                    .ServerService
-                    .setNewUser(this.newUser, response.user.uid)
-                    .subscribe((response) => console.log(name), (error) => console.log(error));
+          this.ServerService.register(user).subscribe();
 
-            })
-            .then(response => {
-                this
-                    .router
-                    .navigate(['/homePage']);
-            })
-            .catch(error => console.log(error));
 
-    }
+    //     const firstname = form.value.Firstname;
+    //     const lastname = form.value.Lastname;
+    //     // built-in img for now!
+    //     const userimg = form.value.userimg;
+
+    //     // send email & password to firebase auth!
+    //     firebase
+    //         .auth()
+    //         .createUserWithEmailAndPassword(email, password)
+    //         .then(response => {
+    //             // Create a new user
+    //             this.newUser = new User(firstname, lastname, 'http://www.mizrach.org.il/wp-content/uploads/2009/03/boy-512.png', email, 10, response.user.uid);
+    //             localStorage.setItem('CurrentUserUid', response.user.uid);
+
+    //             // Post the user into 'Users' in Firebase/database
+    //             this
+    //                 .ServerService
+    //                 .setNewUser(this.newUser, response.user.uid)
+    //                 .subscribe((response) => console.log(name), (error) => console.log(error));
+
+    //         })
+    //         .then(response => {
+    //             this
+    //                 .router
+    //                 .navigate(['/homePage']);
+    //         })
+    //         .catch(error => console.log(error));
+
+     }
 }

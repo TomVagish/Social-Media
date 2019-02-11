@@ -2,10 +2,16 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const cors = require('cors');
 const md5 = require('md5');
+
 var usersRouter = require('../routes/users');
 var postsRouter = require('../routes/posts');
 
+// use the express framework in this app
 const app = express();
+
+
+
+
 
 // use cors() method for Cors problem!
 app.use(cors());

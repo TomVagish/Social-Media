@@ -13,8 +13,12 @@ export class ServesService {
 
 
 
-    sendUsertoserver(user: any) {
-      return this.http.post('http://localhost:3000/users', user);
+    register(user: any) {
+      return this.http.post('http://localhost:3000/users/', user);
+    }
+
+    login(user: any) {
+      return this.http.post('http://localhost:3000/users/', user);
     }
 
 

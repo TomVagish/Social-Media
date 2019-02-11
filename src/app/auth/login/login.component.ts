@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
             userPassword: password
           };
 
-          this.Serverservice.sendUsertoserver(user).subscribe();
+          this.Serverservice.login(user).subscribe();
+
 
         // firebase
         //     .auth()

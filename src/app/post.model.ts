@@ -7,6 +7,7 @@ export class Post {
     private postUserName: string;
     private postImg: string;
     private postHeader: string;
+    private postDate: string;
     private postContent: string;
     private postLike: number;
     private postComment: string;
@@ -23,10 +24,11 @@ export class Post {
     //     this.postLike = postLike;
     //    // this.postComment = this.postComment;
     // }
-    constructor(postContent: string, postHeader: string) {
+    constructor(postContent: string, postHeader: string, postDate: string) {
 
        this.postHeader = postHeader;
         this.postContent = postContent;
+        this.postDate = postDate;
 
     }
 
