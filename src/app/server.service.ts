@@ -18,7 +18,9 @@ export class ServesService {
     }
 
     login(user: any) {
-      return this.http.post('http://localhost:3000/users/', user);
+      return this.http.post('http://localhost:3000/users/login', user)
+      .subscribe(response =>
+        console.log(response));
     }
 
 

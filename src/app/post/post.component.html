@@ -8,42 +8,42 @@
       <div >
           <div class="UploadPostDate" >
               <p> {{date | date: 'dd'}}/{{date | date:'MM'}}/{{date | date: 'yyyy'}}</p>
-             
+
           </div>
-        <div > 
-            <img class="UserprofileImg" src="{{item.postUserNameImg}}" > 
+        <div >
+            <img class="UserprofileImg" src="{{item.postUserNameImg}}" >
             <h5 >{{item.postUserName}} </h5>
-           
+
         </div>
-       
+
       </div>
-        
+
       <hr>
 
        <div>
         <img  class="card-img-top" src="{{item.postImg}}" >
-        
+
        </div>
-     
-        
+
+
         <!-- <p class="card-title">{{item.postHeader}}</p> -->
         <p class="card-body">{{item.postContent}}</p>
         <h5 *ngIf="item.postLike!=0">{{item.postLike}}</h5>
         <img  class="likebutton" src="https://techliberation.com/wp-content/uploads/2011/05/facebook_like_button_big.jpg">
         <hr>
-        
+
         <input (keydown)="OnClickSendComment($event)"   #NewComment type="text" placeholder="Enter your comment.." class="form-control">
         <br>
       <hr>
-    
+
      <!-- <div *ngFor="let x of CommentArray; let i= index">
         <div>
             <div>
-              
+
                   <img class="commentUserImg" src="{{item.postUserNameImg}}" >
-  
-              
-  
+
+
+
               <div class="col-md-10">
                   <p>{{x}}</p>
               </div>
@@ -57,10 +57,11 @@
       </div> -->
 
 
-          
+
   </div>
-  
-      
+
+
 </div>
 </div>
 </div>
+
