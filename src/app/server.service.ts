@@ -5,10 +5,13 @@ import {User} from './User.model';
 import * as firebase from 'firebase';
 import {defineBase} from '@angular/core/src/render3';
 import { Post } from './post.model';
+import { Token } from '@angular/compiler';
 
 @Injectable()
 
 export class ServesService {
+  private token: string;
+
     constructor(private http: Http, private db: AngularFireDatabase) {}
 
 
@@ -17,12 +20,22 @@ export class ServesService {
       return this.http.post('http://localhost:3000/users/', user);
     }
 
+
     login(user: any) {
       return this.http.post('http://localhost:3000/users/login', user)
-      .subscribe(response =>
-        console.log(response));
+     .subscribe(response => {
+
+      this.token = response + '';
+      console.log(this.token);
+     });
+        // the return token from server after success logged-in!
+
     }
 
+
+      getToken() {
+        return this.token;
+      }
 
 
     // post new User into Firebase/Users
