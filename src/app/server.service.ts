@@ -7,18 +7,19 @@ import * as firebase from 'firebase';
 import {defineBase} from '@angular/core/src/render3';
 import { Post } from './post.model';
 import { Token } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Injectable()
 
 export class ServesService {
   private token: any;
 
-    constructor(private http: Http , private db: AngularFireDatabase) {}
+    constructor(private http: Http , private db: AngularFireDatabase, private router: Router) {}
 
 
     // register request to server with user details!
     register(user: any) {
-      return this.http.post('http://localhost:3000/users/', user);
+      return this.http.post('http://localhost:3000/users/register', user);
     }
 
 
@@ -28,6 +29,7 @@ export class ServesService {
      .subscribe(response => {
        // get the token from response after successful login!
       this.token = JSON.parse(response.text());
+      this.router.navigate(['/homePage']);
      });
 
     }

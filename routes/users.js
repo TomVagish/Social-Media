@@ -11,14 +11,18 @@ const jwt = require('jsonwebtoken');
 // sreate session to logged-in users
 var session = require('express-session');
 
+
+const Usertoken = '';
+// session Configuration
 router.use(session({
-  key: 'user_sid',
-  secret: 'somerandonstuffs',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-      expires: 600000
-  }
+  name:Usertoken,
+  resave:false,
+  saveUninitialized:false,
+  secret:'thisistomsecret!string',
+cookie:{
+  maxAge: 3600000,
+  sameSite: true,
+}
 }));
 
 
@@ -31,9 +35,17 @@ mongoose.connect('mongodb+srv://Tom:yewMZEZVsb7tsAan@cluster0-09fhj.mongodb.net/
 });
 
 
+// router.use((req,res,next)=>{
+//   const {userId} = req.session;
+//   if(userId){
+//     res.locals.user =
+//   }
+// })
+
+
 
 // register route
-router.post('/',(req,res,next)=>{
+router.post('/register',(req,res,next)=>{
 
     const user = new User({
       userEmail: req.body.userEmail,
@@ -53,6 +65,7 @@ router.post('/',(req,res,next)=>{
 
 });
 
+
 // login route
  router.post('/login',(req,res,next)=>{
 
@@ -66,7 +79,9 @@ router.post('/',(req,res,next)=>{
 
     if(md5(req.body.userPassword) == user.userPassword ){
       // Create token when the user success to login!
-        const token  =  jwt.sign({email: user.userEmail, userId: user._Id},'secret_t_v_angular',{expiresIn: '2h'});
+        const token = jwt.sign({email: user.userEmail, userId: user._Id},'secret_t_v_angular',{expiresIn: '2h'});
+        req.session.userId = token;
+        console.log(req.session);
       return res.status(200).json({
         token: token,
          message: 'login Success ! '
