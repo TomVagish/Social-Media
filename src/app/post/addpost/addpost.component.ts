@@ -22,31 +22,19 @@ export class AddpostComponent {
       // take the current time that the post upload!
       const cDate = new Date();
       const CurrentDate = cDate.getDate() + '/' + (cDate.getMonth() + 1) + '/' + cDate.getFullYear();
-      console.log(this.ServerService.getToken());
+
+      const currentToken = this.ServerService.getToken();
+
+
+
       // Create an Object of 'Post' and sending him to 'setNewPost'  function into 'ServerService' !
       this.AddNewPost = new Post(this.NewPostContent, 'Header!', CurrentDate);
-      this.ServerService.setNewPost(this.AddNewPost)
+      this.ServerService.setNewPost(currentToken, this.AddNewPost)
       .subscribe(
           (error) => console.log(error));
 
-    //     const CurrentUid = localStorage.getItem('CurrentUserUid');
-
-    // this.db.list(`/Users/${CurrentUid}`).valueChanges().subscribe(item => {
-
-
-    //     // the Current user name
-    //     const name = item[0] + '' + item[2];
-    //     const img = item[1] + '';
-    //     // built-in img for now!
-    //
-
-
-    // });
-
-
-
-
-
+          // clean the Textarea after post created!
+          this.DeletePostContent();
 
 
     }

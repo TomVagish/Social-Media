@@ -37,7 +37,9 @@
 
     </nav>
 
-    <!-- 
+
+
+    <!--
 <div *ngIf="OpenLogin"  class="container">
     <div class="card" >
       <h3 ><span>L</span>ogin</h3>
@@ -55,7 +57,7 @@
     <div class="card" >
       <h3><span>R</span>egister</h3>
       <form onsubmit="registerUser()" id="register-form">
-    
+
         <input [(ngModel)]="register_email" name="email" class="form-control" type="email" placeholder="Email" required>
         <input [(ngModel)]="register_password" name="password" class="form-control" type="password" minlength="6" placeholder="Password" required>
         <button (click)="registerUser()"  type="submit" form="register-form"  class="btn btn-success">Register</button>

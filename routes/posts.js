@@ -7,7 +7,7 @@ const checkToken = require('../middleware/check-token');
 
 
 // connecting to mongodb
-mongoose.connect('mongodb+srv://Tom:yewMZEZVsb7tsAan@cluster0-09fhj.mongodb.net/angular?retryWrites=true')
+mongoose.connect('mongodb+srv://Tom:yewMZEZVsb7tsAan@cluster0-09fhj.mongodb.net/SocialMedia?retryWrites=true')
 .then(() =>{
   console.log('connect to mongoDb!')
 }).catch((error)=>{
@@ -21,8 +21,15 @@ router.post('/',checkToken,(req,res,next)=>{
     postContent: req.body.postContent,
     postDate: req.body.postDate
   });
-  post.save();
-  console.log(post);
+  post.save().then(()=>{
+    res.status(201).json({
+      message: 'post created!'
+    })
+  }).catch((error)=>{
+    res.status(error).json({
+      message:error
+    })
+  });
 });
 
 
