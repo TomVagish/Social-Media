@@ -1,8 +1,25 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+
+  <h1>
+      <span>Be</span>
+      Connected
+      <span>|</span>
+  </h1>
+
+  <ul class="nav justify-content-end">
+
+              <li>
+                  <a id="signOutbutton" (click)="signout()">Sign out</a>
+              </li>
+
+      </ul>
+
+  </nav>
 
 
 <!-- tablet/smartphone size -->
 <div class="container-fluid">
-          
+
 
     <div class="row">
             <div class="col-md-12">
@@ -18,42 +35,42 @@
 
     <div class="row">
             <div class="col-md-12">
-        
-           
+
+
             <br>
             <hr>
-        
-            
+
+
              <div class="col-md-12">
                     <div *ngIf="ShowMenu"   >
                            <app-side-nav></app-side-nav>
-   
-                     </div>              
+
+                     </div>
                     </div>
 
              <div class="col-md-12">
                     <div class="MessengerToggel" *ngIf="showMessenger"   >
-                            <app-side-messenger></app-side-messenger>       
-                     </div>              
+                            <app-side-messenger></app-side-messenger>
+                     </div>
                     </div>
 
                <div class="col-md-12">
              <div *ngIf="ShowAddPost"   >
-                     
+
              <app-addpost></app-addpost>
-              </div>              
+              </div>
              </div>
 
-            
 
-      
-            
+
+
+
             <app-post (PostArrayChange)="PostArrayChangefunc($event)"></app-post>
             <br>
             <br>
             </div>
     </div>
- 
+
 </div>
 
 
@@ -69,9 +86,9 @@
             <app-side-nav></app-side-nav>
          </div>
     </div>
-    
+
     <div class="col-md-7">
-                    
+
        <div class="centerPost">
                     <br>
             <hr>
@@ -80,23 +97,23 @@
              <div *ngIf="Show"   >
              <app-addpost></app-addpost>
               </div>
-                                  
+
              </div>
-            
+
             <app-post (PostArrayChange)="PostArrayChangefunc($event)"></app-post>
             <br>
             <br>
        </div>
-         
+
     </div>
 
-  
+
             <div class="col-md-2">
                            <div class="SideMessengerfixed">
                                     <app-side-messenger></app-side-messenger>
                            </div>
                     </div>
-  
+
 
 </div>
 

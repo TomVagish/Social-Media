@@ -1,15 +1,13 @@
 h1 {
 
-    font-family: tahoma;
-    color: whitesmoke;
+  font-family: tahoma;
+  color: whitesmoke;
 }
 h1:hover{
-    cursor: pointer;
+  cursor: pointer;
 }
 
-nav{
-  opacity: 0.9;
-}
+
 nav input{
 border-radius: 10px;
 text-align: center;
@@ -17,67 +15,67 @@ text-align: center;
 }
 .card {
 
-    background-color: grey;
-    margin-top: 80px;
-    width: 30%;
-    margin-left: 80%;
+  background-color: grey;
+  margin-top: 80px;
+  width: 30%;
+  margin-left: 80%;
 
 }
 ul li{
-    display: block;
+  display: block;
 }
 button {
-    background-color: aquamarine;
-    color: black;
+  background-color: aquamarine;
+  color: black;
 }
 h3 {
-    text-align: center;
-    color: whitesmoke;
+  text-align: center;
+  color: whitesmoke;
 }
 span {
-    color: mediumspringgreen;
+  color: mediumspringgreen;
 }
 
 nav ul li {
-    font-family: tahoma;
-    color: whitesmoke;
+  font-family: tahoma;
+  color: whitesmoke;
 
 }
 
 a {
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s all;
-    color: whitesmoke
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s all;
+  color: whitesmoke
 }
 a:hover {
-    transform: scale(1.2,1.1);
+  transform: scale(1.2,1.1);
 }
 
 .container {
-    z-index: 1;
-    position: absolute;
+  z-index: 1;
+  position: absolute;
 }
 @media only screen and (max-width: 767px) {
 
-    .card {
-        width: 100%;
-        margin-left: 1%;
-    }
+  .card {
+      width: 100%;
+      margin-left: 1%;
+  }
 
 }
 @media only screen and (max-width: 992px) {
 
-    .card {
-        width: 80%;
-        margin-left: 1%;
-    }
+  .card {
+      width: 80%;
+      margin-left: 1%;
+  }
 
 }
 @media only screen and (max-width: 360px) {
 
-    .card {
-        margin-top: 150px;
-    }
+  .card {
+      margin-top: 150px;
+  }
 
 }

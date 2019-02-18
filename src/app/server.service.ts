@@ -17,6 +17,7 @@ export class ServesService {
     constructor(private http: Http , private db: AngularFireDatabase, private router: Router) {}
 
 
+
     // register request to server with user details!
     register(user: any) {
       return this.http.post('http://localhost:3000/users/register', user);

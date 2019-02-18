@@ -1,5 +1,5 @@
 .container{
-  
+
     margin-top: 75px;
      background-color: rgba(221, 215, 215, 0.418);
  }
@@ -13,76 +13,90 @@
      width: 8%;
      margin-right: 20px;
  }
- 
+
  .AddpostImg{
      float: right;
      width: 10%;
      transition: 0.5s all;
  }
- 
- 
- 
- 
+
+#signOutbutton{
+  color: aquamarine;
+}
+
+h1 {
+
+  font-family: tahoma;
+  color: whitesmoke;
+}
+span{
+  color: aquamarine;
+}
+nav{
+  opacity: 0.9;
+  }
+
  .container-fluid{
      display: none;
      margin-top: 70px;
-       
+
    }
- 
+
    .MessengerImg{
        float: right;
        width: 10%;
    }
- 
+
    hr{
-     border: 1px solid aquamarine;  
+     border: 1px solid aquamarine;
    }
- 
- 
-  
+
+
+
  @media only screen and (max-width: 992px) {
-   
-    
+
+
      .container-fluid{
- 
+
        display: block;
        background-color: rgba(221, 215, 215, 0.418);
-         
+
      }
- 
+
      .container{
          display: none;
      }
-   
-    
-   
- 
+
+
+
+
    }
-   
+
  @media only screen and (max-width: 767px) {
-   
+
      .container-fluid{
-     
+
       display: block;
        background-color: rgba(221, 215, 215, 0.418);
-         
+
      }
- 
-     
- 
+
+
+
    }
- 
+
  @media only screen and (max-width: 360px) {
-   
+
      .container-fluid{
          margin-top: 120px;
       display: block;
        background-color: rgba(221, 215, 215, 0.418);
-         
+
      }
- 
-     
- 
+
+
+
    }
- 
- 
+
+
+

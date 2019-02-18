@@ -34,4 +34,9 @@ export class HomepageComponent implements OnInit {
           }
       }
 
+
+
+      signout() {
+
+      }
 }

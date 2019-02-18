@@ -2,19 +2,25 @@ form {
     margin-top: 100px;
 }
 
-span {
-    color: aquamarine;
 
+
+#headerinnav{
+color: whitesmoke;
 }
 
-h1 {
+span{
+color: aquamarine;
+}
+
+#Frontappname{
     text-align: center;
     color: silver;
-    font-size: 150px;
+    font-size: 100px;
     margin-top: 150px;
     transition: 1s all;
 }
-h1:hover {
+
+#Frontappname:hover {
     color: grey;
 
 }
@@ -26,4 +32,14 @@ img {
 
 input[type="file"] {
     display: none;
+}
+
+
+
+#login_reg{
+  color: whitesmoke;
+}
+
+a{
+  text-decoration:none;
 }
