@@ -6,6 +6,10 @@ h1 {
 h1:hover{
     cursor: pointer;
 }
+
+nav{
+  opacity: 0.9;
+}
 nav input{
 border-radius: 10px;
 text-align: center;
@@ -37,7 +41,7 @@ span {
 nav ul li {
     font-family: tahoma;
     color: whitesmoke;
-    
+
 }
 
 a {

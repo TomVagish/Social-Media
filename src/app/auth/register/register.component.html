@@ -18,8 +18,9 @@
 
         <div class="col-md-2">
             <img
-                src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png"></div>
-            <div class="col-md-10">
+                src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png">
+            </div>
+            <div class="col-xs-10">
                 <form (ngSubmit)="onRegisterd(f)" #f="ngForm" ngNativeValidate>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -38,7 +39,7 @@
                                 id="Firstname"
                                 name="Firstname"
                                 ngModel
-                                required></div>
+                                ></div>
                             <div class="form-group">
                                 <label for="Lastname">Last name</label>
                                 <input
@@ -47,7 +48,7 @@
                                     id="Lastname"
                                     name="Lastname"
                                     ngModel
-                                    required></div>
+                                    ></div>
                                 <div class="form-group">
                                     <label for="password">password</label>
                                     <input
@@ -58,17 +59,19 @@
                                         name="password"
                                         ngModel
                                         required></div>
+
                                     <div class="form-group">
-                                        <label for="userimg">Upload img</label>
+
+                                        <label class="btn btn-info" for="userimg">Upload profile image</label>
                                         <input
-                                            class="form-control"
                                             type="file"
                                             id="userimg"
                                             name="userimg"
                                             ngModel
-                                            required></div>
+                                            >
+                                        </div>
 
-                                        <button class="btn btn-primary" type="submit">Register!</button>
+                                        <button class="btn btn-primary" type="submit">Register</button>
                                     </form>
                                 </div>
                             </div>

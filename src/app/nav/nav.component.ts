@@ -15,7 +15,7 @@ import { defineBase } from '@angular/core/src/render3';
 
 @Component({selector: 'app-nav', templateUrl: './nav.component.html', styleUrls: ['./nav.component.css']})
 export class NavComponent {
-    userId: string;
+    
     constructor(private afAuth: AngularFireAuthModule,
         private ServerService:ServesService,
         private eRef : ElementRef,
@@ -23,13 +23,14 @@ export class NavComponent {
          private router: Router) {
     }
 
-    HideLoginRegister = true;
+    loginRegTemplate = true;
+    signOutTemplate = true;
 
     signout(){
         firebase.auth().signOut().then(
             response =>{
                this.router.navigate(['/LoginPage']);
-               this.HideLoginRegister = false;
+              // this.loginRegTemplate = true;
             }
            ).catch(function(error) {
             // An error happened.

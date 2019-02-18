@@ -9,19 +9,19 @@ import {FormsModule} from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 
-//Components
+// Components
 import {AppComponent} from './app.component';
 import {NavComponent} from './nav/nav.component';
 import {SideNavComponent} from './side-nav/side-nav.component';
 import {PostComponent} from './post/post.component';
 import {AddpostComponent} from './post/addpost/addpost.component';
-import {SideMessengerComponent} from './side-messenger/side-messenger.component'
-import {HomepageComponent} from './homepage/homepage.component'
+import {SideMessengerComponent} from './side-messenger/side-messenger.component';
+import {HomepageComponent} from './homepage/homepage.component';
 import {LoginComponent} from './auth/login/login.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 
-const appRoutes : Routes = [
+const appRoutes: Routes = [
     {
         path: '',
         component: RegisterComponent

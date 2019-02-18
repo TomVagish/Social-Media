@@ -8,16 +8,19 @@
 
     <ul class="nav justify-content-end">
 
-        <ng-template [ngIf]="true">
+        <!-- signout template! -->
+        <ng-template [ngIf]="signOutTemplate">
             <li>
-                <input class="form-control" type="search" placeholder="Search"></li>
+                <!-- <input class="form-control" type="search" placeholder="Search"></li> -->
                 <li>
                     <a (click)="signout()">signout</a>
                 </li>
             </ng-template>
             <ul >
 
-                <ng-template [ngIf]="true">
+
+                <!-- Login & Register buttons template! -->
+                <ng-template [ngIf]="loginRegTemplate">
                     <li>
                         <a routerLink="/LoginPage">
                             <span>L</span>ogin</a>
@@ -34,7 +37,9 @@
 
     </nav>
 
-    <!-- 
+
+
+    <!--
 <div *ngIf="OpenLogin"  class="container">
     <div class="card" >
       <h3 ><span>L</span>ogin</h3>
@@ -52,7 +57,7 @@
     <div class="card" >
       <h3><span>R</span>egister</h3>
       <form onsubmit="registerUser()" id="register-form">
-    
+
         <input [(ngModel)]="register_email" name="email" class="form-control" type="email" placeholder="Email" required>
         <input [(ngModel)]="register_password" name="password" class="form-control" type="password" minlength="6" placeholder="Password" required>
         <button (click)="registerUser()"  type="submit" form="register-form"  class="btn btn-success">Register</button>

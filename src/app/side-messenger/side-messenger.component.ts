@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {post} from '../post.model';
+import {Post} from '../post.model';
 import {AngularFireDatabase} from 'angularfire2/database';
 
-@Component({selector: 'app-side-messenger', templateUrl: './side-messenger.component.html', styleUrls: ['./side-messenger.component.css'], providers: []})
+@Component({selector: 'app-side-messenger',
+ templateUrl: './side-messenger.component.html',
+  styleUrls: ['./side-messenger.component.css'],
+   providers: []})
 export class SideMessengerComponent implements OnInit {
 
-    constructor(private db : AngularFireDatabase) {}
+    constructor(private db: AngularFireDatabase) {}
 
     OnlineArray : any[];
 
@@ -23,7 +26,7 @@ export class SideMessengerComponent implements OnInit {
             }
 
             // console.log(res)//should give you the array of percentage.
-            )
+            );
 
     }
 

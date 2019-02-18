@@ -1,5 +1,9 @@
 
-
+.container{
+    position: fixed;
+    width: 10%;
+    overflow-y: scroll;
+}
 
 img{
     width: 50%;

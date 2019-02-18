@@ -2,7 +2,7 @@
   <div class="row">
   <!-- Menu in the left side of the website that shows the most common command for users -->
       <ul class="col-md-10" >
-          <li><a routerLink="/profilePage">My profile</a></li>
+          <li><a id="userName" routerLink="/profilePage">{{CurrentUserName}}</a></li>
           <li>Settings</li>
           <li (click)="ShowHide=!ShowHide" >
             <a class="dropdown-toggle" >Sort</a>
