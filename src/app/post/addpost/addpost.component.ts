@@ -30,8 +30,7 @@ export class AddpostComponent {
       // Create an Object of 'Post' and sending him to 'setNewPost'  function into 'ServerService' !
       this.AddNewPost = new Post(this.NewPostContent, 'Header!', CurrentDate);
       this.ServerService.setNewPost(currentToken, this.AddNewPost)
-      .subscribe(
-          (error) => console.log(error));
+      .subscribe((error)=> console.log(error));
 
           // clean the Textarea after post created!
           this.DeletePostContent();

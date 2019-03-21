@@ -16,8 +16,8 @@ export class HomepageComponent implements OnInit {
   ShowAddPost = false;
   showMessenger = false;
 
-      //Toggle function with 3 options!
-      toggle_Addpost_Navbar_Messenger(flag : number)
+      // Toggle function with 3 options!
+      toggle_Addpost_Navbar_Messenger(flag: number)
       {
           if (flag == 1 && this.ShowMenu == this.ShowMenu) {
               this.ShowMenu = !this.ShowMenu;

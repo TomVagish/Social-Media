@@ -1,10 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Http, RequestOptions} from '@angular/http';
+import {Http} from '@angular/http';
 import { Headers } from '@angular/http';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {User} from './User.model';
-import * as firebase from 'firebase';
-import {defineBase} from '@angular/core/src/render3';
+
 import { Post } from './post.model';
 import { Token } from '@angular/compiler';
 import { Router } from '@angular/router';
